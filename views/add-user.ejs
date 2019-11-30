@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <%- include('partials/navegacao') %>
+<body>
+
+		<main>
+			<h2>Adicionar usuário</h2>
+			
+			<div class="jumbotron">
+			<form  method="POST">
+				<label for="user">Nome de usuário</label> <br>
+            	<input class="form-control" name="user"/>
+
+            	<label for="pass">Senha</label>
+            	<input class="form-control" type="password" name="pass"/><br>
+
+            	<label for="isAdmin">Coloque um valor para ser Administrador ou deixe em branco</label>
+            	<input class="form-control"  name="isAdmin"/><br>
+
+            	<button type="input" class="btn btn-dark">Enviar</button>
+			</form>
+			
+			</div>
+			<br>
+
+			<h2>Usuários Existentes</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Nome</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<% if (usuarios.length > 0) { %>
+
+						<td> 
+							<% for (usuario of usuarios) { %>
+							<%= usuario.user %> <a href="/admin/excluir/<%= usuario._id %>">Remover</a><br>
+							<% } %>
+							<% } %>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			
+		</main>
+
+</body>
+</html>

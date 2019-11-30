@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <%- include('partials/navegacao') %>
+<body>
+
+		<main>
+			<h1>Noticias</h1>
+			
+			
+			<table class="table">
+				<thead>
+					<tr>
+						 <th scope="col">Titulo</th>
+						  <th></th>
+						  <th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+							<% if (noticias.length > 0) { %>
+							
+						<td> 
+							<% for (noticia of noticias) { %>
+							<%= noticia.titulo %> <a href="/detalhes/<%= noticia._id %>">Detalhar</a><br>
+							<% } %>
+							<% } %>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			
+		</main>
+
+</body>
+</html>

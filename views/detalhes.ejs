@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+ <%- include('partials/navegacao') %>
+<body>
+
+	<main>
+
+		<center>
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title"><%= detalhe_noticia.titulo %></h5>
+					<h6 class="card-subtitle mb-2 text-muted">Seguem abaixo os acontecimentos</h6>
+					<p class="card-text"><%= detalhe_noticia.noticia %></p>
+					<a href="/" class="card-link">Voltar</a>
+					<% if (user) { %>
+					<% if (isAdmin) { %>
+					<a href="/admin/excluirNoticia/<%= detalhe_noticia._id %>">Excluir</a><br>
+					<% } else {%>
+					<a href="/excluirNoticia/<%= detalhe_noticia._id %>">Excluir</a><br>
+					<% } %>
+					<% } %>
+				</div>
+			</div>
+		</center>
+
+		
+			
+		</main>
+
+</body>
+</html>
